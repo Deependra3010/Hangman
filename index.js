@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     const word = randomWord();
-    res.render("home.ejs", { word });
+    res.render("index.ejs", { word });
     // res.render("/main.js", { word });
 })
 
