@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 3000;
 const express = require('express');
 const app = express();
 const randomWord = require('random-word');
@@ -18,6 +19,6 @@ app.get('/', (req, res) => {
     // res.render("/main.js", { word });
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Listening on port 3000!!");
 })
