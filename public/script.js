@@ -4,6 +4,11 @@ const theWord = document.getElementById('theWord');
 const result = document.getElementById('result');
 const buttons = document.querySelectorAll("button");
 const live = document.getElementById('live');
+const reset = document.getElementById('reset');
+
+reset.addEventListener('click', () => {
+    window.location.reload();
+})
 
 var chances = 6;
 var wrong = 0;
@@ -66,22 +71,22 @@ function isWon() {
 function updateWrong() {
     live.innerHTML = chances - wrong;
     if (wrong === 1) {
-        document.getElementById('head').style.display = "block";
+        document.getElementById('personImage').src = "1.png";
     }
     if (wrong === 2) {
-        document.getElementById('hand1').style.display = "block";
+        document.getElementById('personImage').src = "2.png";
     }
     if (wrong === 3) {
-        document.getElementById('hand2').style.display = "block";
+        document.getElementById('personImage').src = "3.png";
     }
     if (wrong === 4) {
-        document.getElementById('stomach').style.display = "block";
+        document.getElementById('personImage').src = "4.png";
     }
     if (wrong === 5) {
-        document.getElementById('leg1').style.display = "block";
+        document.getElementById('personImage').src = "5.png";
     }
     if (wrong === 6) {
-        document.getElementById('leg2').style.display = "block";
+        document.getElementById('personImage').src = "6.png";
     }
 }
 
