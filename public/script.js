@@ -146,7 +146,7 @@ function updateWrong() {
 function isLost() {
 
     if (wrong === chances) {
-        result.innerText = "You Lost!!!";
+        result.innerText = "You Lost!!! The word was " + word;
         for (button of buttons) {
             button.disabled = true;
         }
