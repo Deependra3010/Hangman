@@ -23,11 +23,64 @@ for (let letter of word) {
 }
 
 for (letter of currentWord) {
-
     const viewLetters = document.createElement('span');
     viewLetters.innerText = letter + " ";
     theWord.appendChild(viewLetters);
 }
+
+function randomNumber() {
+    return Math.floor(Math.random() * (word.length));
+}
+
+function hint() {
+    var show;
+    if (word.length <= 5) {
+        show = 1;
+    } else if (word.length >= 6 && word.length <= 8) {
+        show = 2;
+    } else {
+        show = 3;
+    }
+
+    if (show === 1) {
+        var letter = randomNumber();
+        currentWord[letter] = answer[letter];
+        theWord.innerHTML = "";
+        for (letter of currentWord) {
+            const viewLetters = document.createElement('span');
+            viewLetters.innerText = letter + " ";
+            theWord.appendChild(viewLetters);
+        }
+    }
+
+    if (show === 2) {
+        var letter1 = randomNumber();
+        var letter2 = randomNumber();
+        currentWord[letter1] = answer[letter1];
+        currentWord[letter2] = answer[letter2];
+        theWord.innerHTML = "";
+        for (letter of currentWord) {
+            const viewLetters = document.createElement('span');
+            viewLetters.innerText = letter + " ";
+            theWord.appendChild(viewLetters);
+        }
+    }
+    if (show === 3) {
+        var letter1 = randomNumber();
+        var letter2 = randomNumber();
+        var letter3 = randomNumber();
+        currentWord[letter1] = answer[letter1];
+        currentWord[letter2] = answer[letter2];
+        currentWord[letter3] = answer[letter3];
+        theWord.innerHTML = "";
+        for (letter of currentWord) {
+            const viewLetters = document.createElement('span');
+            viewLetters.innerText = letter + " ";
+            theWord.appendChild(viewLetters);
+        }
+    }
+}
+hint();
 
 function guess(choosenLetter) {
     if (guessed.indexOf(choosenLetter.id) === -1) {
